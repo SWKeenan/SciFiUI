@@ -1,18 +1,26 @@
 # SciFi UI Project
 
-Name:
+Name: Shane Keenan
 
-Student Number: 
+Student Number: C17702215
 
 Fork this repository and use it a starter project for your assignment
 
 # Description of the assignment
 
+The description will go here.
+
 # Instructions
+
+Instructions go here.
 
 # How it works
 
+How it works goes here.
+
 # What I am most proud of in the assignment
+
+I am proud of blah blah.
 
 # Markdown Tutorial
 
