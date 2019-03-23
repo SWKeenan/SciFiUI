@@ -4,8 +4,10 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
+    Computer mainComputer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc;
+    Radar r,r2,r3,r4;
     AnimatedBar bar;
 
     boolean[] keys = new boolean[1024];
@@ -35,6 +37,7 @@ public class UI extends PApplet
 
     public void setup()
     {
+        mainComputer = new Computer(this, 0, 300, width, height, "The Computer");
         b = new Button(this,  360, height-210, 100, 50, "B");
         b2 = new Button(this, 465, height-210, 100,50, "C");
         b3 = new Button(this, 260, height-100, 100, 50, "H");
@@ -47,11 +50,17 @@ public class UI extends PApplet
         b10 = new Button(this, 310, height-155, 100, 50, "E");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         bar = new AnimatedBar(this, 20, 10, 20, 100);
+        r = new Radar(this, 100, height-100, 100, 0.1f);
+        r2 = new Radar(this, 100, height-225, 100, 0.3f);
+        r3 = new Radar(this, width-100, height-100, 100, 0.01f);
+        r4 = new Radar(this, width-100, height-225, 100, 0.2f);
     }
 
     public void draw()
     {
         background(0);
+        mainComputer.render();
+
         b.render();
         b2.render();
         b3.render();
@@ -65,6 +74,15 @@ public class UI extends PApplet
 
         mc.update();
         mc.render();
+
+        r.update();
+        r.render();
+        r2.update();
+        r2.render();
+        r3.update();
+        r3.render();
+        r4.update();
+        r4.render();
 
         bar.render();
         
