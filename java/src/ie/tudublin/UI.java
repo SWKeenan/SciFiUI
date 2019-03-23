@@ -14,7 +14,7 @@ public class UI extends PApplet
 
     public void keyPressed()
     {
-        keys[keyCode] = true;
+        keys[LEFT] = true;
     }
     
     public void keyReleased()
@@ -26,8 +26,7 @@ public class UI extends PApplet
     {
         return keys[c] || keys [Character.toUpperCase(c)];
     }
-    
-
+  
     public void settings()
     {
         size(800, 600);
@@ -91,6 +90,13 @@ public class UI extends PApplet
         if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");
+        }
+
+        if(mousePressed){
+            if(mouseX>360 && mouseX <460 && mouseY>height-160 && mouseY <height-110){
+                fill(255);
+                text("You pressed B", width/2, 175);
+            }
         }
     }
 
