@@ -48,7 +48,7 @@ public class UI extends PApplet
         b8 = new Button(this, 255, height-160, 100, 50, "A");
         b9 = new Button(this, 205, height-105, 100, 50, "D");
         b10 = new Button(this, 310, height-105, 100, 50, "E");
-        mc = new MovingCircle(this, width / 2, height / 2, 50);
+        mc = new MovingCircle(this, width / 2, 175, 50);
         bar = new AnimatedBar(this, 20, 10, 20, 100);
         r = new Radar(this, 100, height-50, 100, 0.1f);
         r2 = new Radar(this, 100, height-175, 100, 0.3f);

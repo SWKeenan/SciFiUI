@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public class MovingCircle
 {
     private float x;
-    private float dx = 1;
+    private float dx = 3;
     private float y;
     private float diameter;
     private float radius;
@@ -28,14 +28,14 @@ public class MovingCircle
         ui.fill(255);
         // Static field
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-        ui.text("I am a moving circle", x, y);
+        ui.text("Circle", x, y);
 
     }
 
     public void update()
     {
         x += dx;
-        if ((x > ui.width - radius) || (x < radius))
+        if ((x > 675) || (x < 125))
         {
             dx *= -1;
         }
