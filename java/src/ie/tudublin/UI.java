@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    Computer mainComputer;
+    Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc;
     Radar r,r2,r3,r4;
@@ -37,29 +37,31 @@ public class UI extends PApplet
 
     public void setup()
     {
-        mainComputer = new Computer(this, 0, 300, width, height, "The Computer");
-        b = new Button(this,  360, height-210, 100, 50, "B");
-        b2 = new Button(this, 465, height-210, 100,50, "C");
-        b3 = new Button(this, 260, height-100, 100, 50, "H");
-        b4 = new Button(this, 365, height-100, 100, 50, "I");
-        b5 = new Button(this, 470, height-100, 100, 50, "J");
-        b6 = new Button(this, 415, height-155, 100, 50, "F");
-        b7 = new Button(this, 520, height-155, 100, 50, "G");
-        b8 = new Button(this, 255, height-210, 100, 50, "A");
-        b9 = new Button(this, 205, height-155, 100, 50, "D");
-        b10 = new Button(this, 310, height-155, 100, 50, "E");
+        keyboard = new Computer(this, 0, 350, width, height);
+        computer = new Computer(this, 100, 50, 600, 250);
+        b = new Button(this,  360, height-160, 100, 50, "B");
+        b2 = new Button(this, 465, height-160, 100,50, "C");
+        b3 = new Button(this, 260, height-50, 100, 50, "H");
+        b4 = new Button(this, 365, height-50, 100, 50, "I");
+        b5 = new Button(this, 470, height-50, 100, 50, "J");
+        b6 = new Button(this, 415, height-105, 100, 50, "F");
+        b7 = new Button(this, 520, height-105, 100, 50, "G");
+        b8 = new Button(this, 255, height-160, 100, 50, "A");
+        b9 = new Button(this, 205, height-105, 100, 50, "D");
+        b10 = new Button(this, 310, height-105, 100, 50, "E");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         bar = new AnimatedBar(this, 20, 10, 20, 100);
-        r = new Radar(this, 100, height-100, 100, 0.1f);
-        r2 = new Radar(this, 100, height-225, 100, 0.3f);
-        r3 = new Radar(this, width-100, height-100, 100, 0.01f);
-        r4 = new Radar(this, width-100, height-225, 100, 0.2f);
+        r = new Radar(this, 100, height-50, 100, 0.1f);
+        r2 = new Radar(this, 100, height-175, 100, 0.3f);
+        r3 = new Radar(this, width-100, height-50, 100, 0.01f);
+        r4 = new Radar(this, width-100, height-175, 100, 0.2f);
     }
 
     public void draw()
     {
-        background(0);
-        mainComputer.render();
+        background(0, 0, 100);
+        keyboard.render();
+        computer.render();
 
         b.render();
         b2.render();

@@ -9,25 +9,20 @@ public class Computer
     private float y;
     private float width;
     private float height;
-    private String text;
 
-    public Computer(UI ui, float x, float y, float width, float height, String text)
+    public Computer(UI ui, float x, float y, float width, float height)
     {
         this.ui = ui;
         this.x = x;
         this.y = y;
         this.width = width;
-        this.height = height;
-        this.text = text;
-        
+        this.height = height;        
     }
 
     public void render()
     {
-        ui.noFill();
         ui.stroke(255);
         ui.fill(50);
         ui.rect(x, y, width, height, 10);
-        ui.fill(255);
     }
 }
