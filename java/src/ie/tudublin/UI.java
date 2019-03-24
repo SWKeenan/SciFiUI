@@ -6,7 +6,7 @@ public class UI extends PApplet
 {
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
-    MovingCircle mc;
+    MovingCircle mc,mc2,mc3;
     Radar r,r2,r3,r4;
     AnimatedBar bar;
     int d = day();
@@ -15,6 +15,7 @@ public class UI extends PApplet
     String d1 = String.valueOf(d);
     String m1 = String.valueOf(m);
     String y1 = String.valueOf(y);
+    boolean[] buttonPressed = new boolean[10];
 
     boolean[] keys = new boolean[1024];
 
@@ -55,6 +56,8 @@ public class UI extends PApplet
         b9 = new Button(this, 205, height-145, 100, 50, "D");
         b10 = new Button(this, 310, height-145, 100, 50, "E");
         mc = new MovingCircle(this, width / 2, 175, 50);
+        mc2 = new MovingCircle(this, width/2, 115, 50);
+        mc3 = new MovingCircle(this, width/2, 235, 50);
         bar = new AnimatedBar(this, 20, 10, 20, 100);
         r = new Radar(this, 100, height-50, 100, 0.1f);
         r2 = new Radar(this, 100, height-175, 100, 0.3f);
@@ -78,10 +81,14 @@ public class UI extends PApplet
         b8.render();
         b9.render();
         b10.render();
-
-        mc.update();
-        mc.render();
-
+        if(buttonPressed[0]==true){
+            mc.update();
+            mc.render();
+            mc2.update();
+            mc2.render();
+            mc3.update();
+            mc3.render();
+        }
         r.update();
         r.render();
         r2.update();
@@ -92,16 +99,16 @@ public class UI extends PApplet
         r4.render();
 
         bar.render();
-        
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-        }
 
         if(mousePressed){
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
+                if(buttonPressed[0]==true){
+                    buttonPressed[0] = false;
+                } else if(buttonPressed[0]==false){
+                    buttonPressed[0] = true;
+                }
                 fill(255);
-                text("YOU PRESSED B", width/2, 175);
+                text("YOU PRESSED B", width/2, 60);
             }
         }
         if(mousePressed){
@@ -118,49 +125,49 @@ public class UI extends PApplet
         if(mousePressed){
             if(mouseX>465 && mouseX <565 && mouseY>height-200 && mouseY <height-150){
                 fill(255);
-                text("YOU PRESSED C", width/2, 175);
+                text("YOU PRESSED C", width/2, 60);
             }
         }
         if(mousePressed){
             if(mouseX>205 && mouseX <305 && mouseY>height-145 && mouseY <height-95){
                 fill(255);
-                text("YOU PRESSED D", width/2, 175);
+                text("YOU PRESSED D", width/2, 60);
             }
         }
         if(mousePressed){
             if(mouseX>310 && mouseX <410 && mouseY>height-145 && mouseY <height-95){
                 fill(255);
-                text("YOU PRESSED E", width/2, 175);
+                text("YOU PRESSED E", width/2, 60);
             }
         }
         if(mousePressed){
             if(mouseX>415 && mouseX <515 && mouseY>height-145 && mouseY <height-95){
                 fill(255);
-                text("YOU PRESSED F", width/2, 175);
+                text("YOU PRESSED F", width/2, 60);
             }
         }
         if(mousePressed){
             if(mouseX>520 && mouseX <620 && mouseY>height-145 && mouseY <height-95){
                 fill(255);
-                text("YOU PRESSED G", width/2, 175);
+                text("YOU PRESSED G", width/2, 60);
             }
         }
         if(mousePressed){
             if(mouseX>260 && mouseX <360 && mouseY>height-90 && mouseY <height-40){
                 fill(255);
-                text("YOU PRESSED H", width/2, 175);
+                text("YOU PRESSED H", width/2, 60);
             }
         }
         if(mousePressed){
             if(mouseX>365 && mouseX <465 && mouseY>height-90 && mouseY <height-40){
                 fill(255);
-                text("YOU PRESSED I", width/2, 175);
+                text("YOU PRESSED I", width/2, 60);
             }
         }
         if(mousePressed){
             if(mouseX>470 && mouseX <570 && mouseY>height-90 && mouseY <height-40){
                 fill(255);
-                text("YOU PRESSED J", width/2, 175);
+                text("YOU PRESSED J", width/2, 60);
             }
         }
     }
