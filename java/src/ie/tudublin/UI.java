@@ -9,6 +9,12 @@ public class UI extends PApplet
     MovingCircle mc;
     Radar r,r2,r3,r4;
     AnimatedBar bar;
+    int d = day();
+    int m = month();
+    int y = year();
+    String d1 = String.valueOf(d);
+    String m1 = String.valueOf(m);
+    String y1 = String.valueOf(y);
 
     boolean[] keys = new boolean[1024];
 
@@ -45,7 +51,7 @@ public class UI extends PApplet
         b5 = new Button(this, 470, height-90, 100, 50, "J");
         b6 = new Button(this, 415, height-145, 100, 50, "F");
         b7 = new Button(this, 520, height-145, 100, 50, "G");
-        b8 = new Button(this, 255, height-200, 100, 50, "A");
+        b8 = new Button(this, 255, height-200, 100, 50, "Date");
         b9 = new Button(this, 205, height-145, 100, 50, "D");
         b10 = new Button(this, 310, height-145, 100, 50, "E");
         mc = new MovingCircle(this, width / 2, 175, 50);
@@ -100,8 +106,13 @@ public class UI extends PApplet
         }
         if(mousePressed){
             if(mouseX>255 && mouseX <355 && mouseY>height-200 && mouseY <height-150){
-                fill(255);
-                text("YOU PRESSED A", width/2, 175);
+                
+                for(int i=0;i<100;i++){
+                    fill(random(255),random(255),random(255));
+                    textSize(i+2);
+                    text(d1+"/"+m1+"/"+y1, 300+i, 65+i);
+                }
+                textSize(12);
             }
         }
         if(mousePressed){
