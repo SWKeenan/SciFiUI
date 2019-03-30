@@ -89,6 +89,14 @@ public class UI extends PApplet
             mc3.update();
             mc3.render();
         }
+        if(buttonPressed[1]==true){
+            for(int i=0;i<100;i++){
+                fill(random(255),random(255),random(255));
+                textSize(i+2);
+                text(d1+"/"+m1+"/"+y1, 300+i, 65+i);
+            }
+            textSize(12);
+        }
         r.update();
         r.render();
         r2.update();
@@ -102,6 +110,7 @@ public class UI extends PApplet
 
         if(mousePressed){
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
+                delay(100);
                 if(buttonPressed[0]==true){
                     buttonPressed[0] = false;
                 } else if(buttonPressed[0]==false){
@@ -113,13 +122,13 @@ public class UI extends PApplet
         }
         if(mousePressed){
             if(mouseX>255 && mouseX <355 && mouseY>height-200 && mouseY <height-150){
-                
-                for(int i=0;i<100;i++){
-                    fill(random(255),random(255),random(255));
-                    textSize(i+2);
-                    text(d1+"/"+m1+"/"+y1, 300+i, 65+i);
+                if(buttonPressed[1]==true){
+                    buttonPressed[1] = false;
+                } else if(buttonPressed[1]==false){
+                    buttonPressed[1] = true;
                 }
-                textSize(12);
+                fill(255);
+                text("YOU PRESSED DATE", width/2, 60);
             }
         }
         if(mousePressed){
