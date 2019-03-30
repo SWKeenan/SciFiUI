@@ -131,9 +131,11 @@ public class UI extends PApplet
         }
         if(buttonPressed[4]==true){
             fill(random(255),random(255),random(255));
-            textSize(random(20,100));
-            text("WORDS", random(80,600), random(50,300));
+            textSize(random(10,100));
+            text("WORDS", random(50,650), random(50,300));
             textSize(12);
+            fill(255);
+            text("can hurt.",width/2,height/3);
         }
         r.update();
         r.render();
@@ -212,6 +214,13 @@ public class UI extends PApplet
             }
         
             else if(mouseX>205 && mouseX <305 && mouseY>height-145 && mouseY <height-95){
+                if(buttonPressed[3]==true){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                    }
+                } else if(buttonPressed[3]==false){
+                    buttonPressed[3] = true;
+                }
                 fill(255);
                 text("YOU PRESSED D", width/2, 60);
             }
@@ -229,26 +238,61 @@ public class UI extends PApplet
             }
         
             else if(mouseX>415 && mouseX <515 && mouseY>height-145 && mouseY <height-95){
+                if(buttonPressed[5]==true){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                    }
+                } else if(buttonPressed[5]==false){
+                    buttonPressed[5] = true;
+                }
                 fill(255);
                 text("YOU PRESSED F", width/2, 60);
             }
         
             else if(mouseX>520 && mouseX <620 && mouseY>height-145 && mouseY <height-95){
+                if(buttonPressed[6]==true){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                    }
+                } else if(buttonPressed[6]==false){
+                    buttonPressed[6] = true;
+                }
                 fill(255);
                 text("YOU PRESSED G", width/2, 60);
             }
         
             else if(mouseX>260 && mouseX <360 && mouseY>height-90 && mouseY <height-40){
+                if(buttonPressed[7]==true){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                    }
+                } else if(buttonPressed[7]==false){
+                    buttonPressed[7] = true;
+                }
                 fill(255);
                 text("YOU PRESSED H", width/2, 60);
             }
      
             else if(mouseX>365 && mouseX <465 && mouseY>height-90 && mouseY <height-40){
+                if(buttonPressed[8]==true){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                    }
+                } else if(buttonPressed[8]==false){
+                    buttonPressed[8] = true;
+                }
                 fill(255);
                 text("YOU PRESSED I", width/2, 60);
             }
   
             else if(mouseX>470 && mouseX <570 && mouseY>height-90 && mouseY <height-40){
+                if(buttonPressed[9]==true){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                    }
+                } else if(buttonPressed[9]==false){
+                    buttonPressed[9] = true;
+                }
                 fill(255);
                 text("YOU PRESSED J", width/2, 60);
             }
