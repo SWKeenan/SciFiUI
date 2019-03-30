@@ -6,7 +6,7 @@ public class UI extends PApplet
 {
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
-    MovingCircle mc,mc2,mc3;
+    MovingCircle mc,mc2,mc3,mc4;
     Radar r,r2,r3,r4;
     AnimatedBar bar,bar2,bar3,bar4,bar5,bar6,bar7,bar8,bar9,bar10,bar11,bar12,bar13,bar14,bar15,
     bar16,bar17,bar18,bar19,bar20,bar21,bar22,bar23,bar24,bar25;
@@ -53,12 +53,13 @@ public class UI extends PApplet
         b5 = new Button(this, 470, height-90, 100, 50, "J");
         b6 = new Button(this, 415, height-145, 100, 50, "F");
         b7 = new Button(this, 520, height-145, 100, 50, "G");
-        b8 = new Button(this, 255, height-200, 100, 50, "Date");
+        b8 = new Button(this, 255, height-200, 100, 50, "DATE");
         b9 = new Button(this, 205, height-145, 100, 50, "D");
         b10 = new Button(this, 310, height-145, 100, 50, "E");
-        mc = new MovingCircle(this, 200, 135, 50, 7);
-        mc2 = new MovingCircle(this, 285, 80, 50, 5);
-        mc3 = new MovingCircle(this, 350, 190, 50, 3);
+        mc = new MovingCircle(this, 200, 145, 50, 7);
+        mc2 = new MovingCircle(this, 285, 90, 50, 5);
+        mc3 = new MovingCircle(this, 350, 200, 50, 3);
+        mc4 = new MovingCircle(this, 300, 255, 50, 6);
         bar = new AnimatedBar(this, 360, 50, 20, 100);
         bar2 = new AnimatedBar(this, 380, 50, 20, 120);
         bar3 = new AnimatedBar(this, 400, 50, 20, 80);
@@ -113,6 +114,8 @@ public class UI extends PApplet
             mc2.render();
             mc3.update();
             mc3.render();
+            mc4.update();
+            mc4.render();
         }
         if(buttonPressed[1]==true){
             for(int i=0;i<100;i++){

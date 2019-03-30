@@ -25,7 +25,6 @@ public class MovingCircle
         ui.fill(ui.random(255),0,ui.random(255));
         ui.ellipse(x, y, diameter, diameter);
         ui.fill(255);
-        // Static field
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.text("Circle", x, y);
 
