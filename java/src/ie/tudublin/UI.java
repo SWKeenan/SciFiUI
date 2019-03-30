@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.core.PApplet;
 
 public class UI extends PApplet
 {
@@ -9,7 +10,7 @@ public class UI extends PApplet
     MovingCircle mc,mc2,mc3,mc4;
     Radar r,r2,r3,r4;
     AnimatedBar bar,bar2,bar3,bar4,bar5,bar6,bar7,bar8,bar9,bar10,bar11,bar12,bar13,bar14,bar15,
-    bar16,bar17,bar18,bar19,bar20,bar21,bar22,bar23,bar24,bar25;
+    bar16,bar17,bar18,bar19,bar20,bar21,bar22,bar23,bar24,bar25,bar26,bar27,bar28;
     int d = day();
     int m = month();
     int y = year();
@@ -55,7 +56,7 @@ public class UI extends PApplet
         b7 = new Button(this, 520, height-145, 100, 50, "G");
         b8 = new Button(this, 255, height-200, 100, 50, "DATE");
         b9 = new Button(this, 205, height-145, 100, 50, "D");
-        b10 = new Button(this, 310, height-145, 100, 50, "E");
+        b10 = new Button(this, 310, height-145, 100, 50, "WORDS");
         mc = new MovingCircle(this, 200, 145, 50, 7);
         mc2 = new MovingCircle(this, 285, 90, 50, 5);
         mc3 = new MovingCircle(this, 350, 200, 50, 3);
@@ -85,6 +86,9 @@ public class UI extends PApplet
         bar23 = new AnimatedBar(this,160,50,20,90);
         bar24 = new AnimatedBar(this,140,50,20,20);
         bar25 = new AnimatedBar(this,120,50,20,180);
+        bar26 = new AnimatedBar(this,620,50,20,110);
+        bar27 = new AnimatedBar(this,640,50,20,130);
+        bar28 = new AnimatedBar(this,660,50,20,10);
 
         r = new Radar(this, 100, height-50, 100, 0.1f);
         r2 = new Radar(this, 100, height-175, 100, 0.3f);
@@ -125,6 +129,12 @@ public class UI extends PApplet
             }
             textSize(12);
         }
+        if(buttonPressed[4]==true){
+            fill(random(255),random(255),random(255));
+            textSize(random(20,100));
+            text("WORDS", random(80,600), random(50,300));
+            textSize(12);
+        }
         r.update();
         r.render();
         r2.update();
@@ -159,8 +169,10 @@ public class UI extends PApplet
             bar23.render();
             bar24.render();
             bar25.render();
-        }
-        
+            bar26.render();
+            bar27.render();
+            bar28.render();
+        } 
 
         if(mousePressed){
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
@@ -205,8 +217,15 @@ public class UI extends PApplet
             }
         
             else if(mouseX>310 && mouseX <410 && mouseY>height-145 && mouseY <height-95){
+                if(buttonPressed[4]==true){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                    }
+                } else if(buttonPressed[4]==false){
+                    buttonPressed[4] = true;
+                }
                 fill(255);
-                text("YOU PRESSED E", width/2, 60);
+                text("YOU PRESSED WORDS", width/2, 60);
             }
         
             else if(mouseX>415 && mouseX <515 && mouseY>height-145 && mouseY <height-95){
