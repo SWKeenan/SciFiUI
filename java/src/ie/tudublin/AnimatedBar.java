@@ -6,6 +6,7 @@ public class AnimatedBar{
     UI ui;
     private float x;
     private float y;
+    private float changeY = 3;
     private float width;
     private float height;
 
@@ -22,16 +23,23 @@ public class AnimatedBar{
     {
         ui.noFill();
         ui.stroke(255);
-        ui.fill(0, 0, 171);
+        ui.fill(ui.random(255),ui.random(255),0);
         ui.rect(x, y, width, height);
+        height += changeY;
+        x++;
+        if ((height > 250) || (height < 0))
+        {
+            changeY *= -1;
+        }
+        if (x > 680)
+        {
+            x = 100;
+        }
+        
     }
 
     public void update()
     {
-        x++;
-        if ((x > height) || (x < height))
-        {
-            x *= -1;
-        }
+        
     }
 }

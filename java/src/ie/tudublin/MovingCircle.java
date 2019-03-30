@@ -5,25 +5,24 @@ import processing.core.PApplet;
 public class MovingCircle
 {
     private float x;
-    private float dx = 3;
+    private float dx;
     private float y;
     private float diameter;
-    private float radius;
     UI ui;
 
-    public MovingCircle(UI ui, float x, float y, float diameter)
+    public MovingCircle(UI ui, float x, float y, float diameter, float dx)
     {
         this.ui = ui;
         this.x = x;
         this.y = y;
+        this.dx = dx;
         this.diameter = diameter;
-        radius = diameter / 2;
     }
     
     public void render()
     {
         ui.stroke(255);
-        ui.noFill();
+        ui.fill(ui.random(255),0,ui.random(255));
         ui.ellipse(x, y, diameter, diameter);
         ui.fill(255);
         // Static field
