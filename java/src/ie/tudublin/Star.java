@@ -18,13 +18,18 @@ public class Star{
 
     public void update()
     {
-
+        z = z - 10;
+        if(z < 1){
+            z = 695;
+        }
     }
     
     public void show()
     {
         ui.fill(255);
         ui.noStroke();
-        ui.ellipse(x,y,8,8);
+        float sx = ui.map(x/z,0,1,0,695);
+        float sy = ui.map(y/z,0,1,0,295);
+        ui.ellipse(sx,sy,8,8);
     }
 }
