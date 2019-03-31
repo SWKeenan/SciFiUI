@@ -1,10 +1,12 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
-import processing.core.PApplet;
+import ddf.minim.*;
 
 public class UI extends PApplet
 {
+    Minim minim;
+    AudioPlayer player;
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc,mc2,mc3,mc4;
@@ -46,6 +48,8 @@ public class UI extends PApplet
 
     public void setup()
     {
+        minim = new Minim(this);
+        player = minim.loadFile("click.wav");
         keyboard = new Computer(this, 0, 350, width, height);
         computer = new Computer(this, 100, 50, 600, 250);
         b = new Button(this,  360, height-200, 100, 50, "BALLS");
@@ -101,6 +105,7 @@ public class UI extends PApplet
 
     public void draw()
     {
+        player.play();
         background(0, 0, 100);
         keyboard.render();
         computer.render();
@@ -194,6 +199,7 @@ public class UI extends PApplet
         if(mousePressed){
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[0]==true){
+                    player.rewind();
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
                     }
@@ -206,6 +212,7 @@ public class UI extends PApplet
         
             else if(mouseX>255 && mouseX <355 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[1]==true){
+                    player.play();
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
                     }
