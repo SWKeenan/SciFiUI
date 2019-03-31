@@ -91,7 +91,7 @@ public class UI extends PApplet
         bar27 = new AnimatedBar(this,640,50,20,130);
         bar28 = new AnimatedBar(this,660,50,20,10);
         for(int i=0;i<stars.length;i++){
-            stars[i] = new Star(this,random(0,width),random(50,300),random(0,width));
+            stars[i] = new Star(this,random(105,695),random(55,295),random(105,695));
         }
         r = new Radar(this, 100, height-50, 100, 0.1f);
         r2 = new Radar(this, 100, height-175, 100, 0.3f);
