@@ -51,8 +51,8 @@ public class UI extends PApplet
         minim = new Minim(this);
         click = minim.loadFile("click.wav");
         ping = minim.loadFile("ping.wav");
-        keyboard = new Computer(this, 0, 350, width, height);
-        computer = new Computer(this, 100, 50, 600, 250);
+        keyboard = new Computer(this, 0, 350, width, height, 50);
+        computer = new Computer(this, 100, 50, 600, 250, 0);
         b = new Button(this,  360, height-200, 100, 50, "BALLS", 0, 0, 100);
         b2 = new Button(this, 465, height-200, 100,50, "BARS", 0, 0, 100);
         b3 = new Button(this, 260, height-90, 100, 50, "H", 0, 0, 100);
@@ -363,6 +363,8 @@ public class UI extends PApplet
             else if(mouseX>0 && mouseX<width && mouseY>0 && mouseY < height){
                 ping.play();
                 ping.rewind();
+                fill(255);
+                ellipse(mouseX,mouseY,10,10);
             }
         }
     }
