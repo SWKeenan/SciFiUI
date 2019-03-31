@@ -18,6 +18,7 @@ public class UI extends PApplet
     String m1 = String.valueOf(m);
     String y1 = String.valueOf(y);
     boolean[] buttonPressed = new boolean[10];
+    Star[] stars = new Star[100];
 
     boolean[] keys = new boolean[1024];
 
@@ -89,7 +90,9 @@ public class UI extends PApplet
         bar26 = new AnimatedBar(this,620,50,20,110);
         bar27 = new AnimatedBar(this,640,50,20,130);
         bar28 = new AnimatedBar(this,660,50,20,10);
-
+        for(int i=0;i<stars.length;i++){
+            stars[i] = new Star(this,random(0,width),random(50,300),random(0,width));
+        }
         r = new Radar(this, 100, height-50, 100, 0.1f);
         r2 = new Radar(this, 100, height-175, 100, 0.3f);
         r3 = new Radar(this, width-100, height-50, 100, 0.01f);
@@ -175,6 +178,10 @@ public class UI extends PApplet
             bar27.render();
             bar28.render();
         } 
+        for(int i=0;i<stars.length;i++){
+            stars[i].update();
+            stars[i].show();
+        }
 
         if(mousePressed){
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
@@ -194,6 +201,7 @@ public class UI extends PApplet
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
                     }
+                    
                 } else if(buttonPressed[1]==false){
                     buttonPressed[1] = true;
                 }
