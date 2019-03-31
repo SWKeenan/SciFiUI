@@ -56,7 +56,7 @@ public class UI extends PApplet
         b6 = new Button(this, 415, height-145, 100, 50, "F");
         b7 = new Button(this, 520, height-145, 100, 50, "G");
         b8 = new Button(this, 255, height-200, 100, 50, "DATE");
-        b9 = new Button(this, 205, height-145, 100, 50, "D");
+        b9 = new Button(this, 205, height-145, 100, 50, "STARS");
         b10 = new Button(this, 310, height-145, 100, 50, "WORDS");
         mc = new MovingCircle(this, 200, 145, 50, 7);
         mc2 = new MovingCircle(this, 285, 90, 50, 5);
@@ -135,10 +135,16 @@ public class UI extends PApplet
         if(buttonPressed[4]==true){
             fill(random(255),random(255),random(255));
             textSize(random(10,100));
-            text("WORDS", random(50,650), random(50,300));
+            text("I", random(50,650), random(50,300));
+            fill(random(255),random(255),random(255));
+            textSize(random(10,100));
+            text("SEE", random(50,650), random(50,300));
+            fill(random(255),random(255),random(255));
+            textSize(random(10,100));
+            text("YOU", random(50,650), random(50,300));
             textSize(12);
             fill(255);
-            text("can hurt.",width/2,height/3);
+            text("It's true.",width/2,height/3);
         }
         r.update();
         r.render();
@@ -178,11 +184,13 @@ public class UI extends PApplet
             bar27.render();
             bar28.render();
         } 
-        for(int i=0;i<stars.length;i++){
-            stars[i].update();
-            stars[i].show();
+        if(buttonPressed[3]==true){
+            for(int i=0;i<stars.length;i++){
+                stars[i].update();
+                stars[i].show();
+            }
         }
-
+       
         if(mousePressed){
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[0]==true){
@@ -230,7 +238,7 @@ public class UI extends PApplet
                     buttonPressed[3] = true;
                 }
                 fill(255);
-                text("YOU PRESSED D", width/2, 60);
+                text("YOU PRESSED STARS", width/2, 60);
             }
         
             else if(mouseX>310 && mouseX <410 && mouseY>height-145 && mouseY <height-95){
