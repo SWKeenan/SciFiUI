@@ -49,7 +49,7 @@ public class UI extends PApplet
     public void setup()
     {
         minim = new Minim(this);
-        player = minim.loadFile("click.wav");
+        player = minim.loadFile("love.wav");
         keyboard = new Computer(this, 0, 350, width, height);
         computer = new Computer(this, 100, 50, 600, 250);
         b = new Button(this,  360, height-200, 100, 50, "BALLS");
@@ -105,7 +105,6 @@ public class UI extends PApplet
 
     public void draw()
     {
-        player.play();
         background(0, 0, 100);
         keyboard.render();
         computer.render();
@@ -196,10 +195,9 @@ public class UI extends PApplet
             }
         }
        
-        if(mousePressed){
+        if(mousePressed==true){
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[0]==true){
-                    player.rewind();
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
                     }
@@ -212,7 +210,6 @@ public class UI extends PApplet
         
             else if(mouseX>255 && mouseX <355 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[1]==true){
-                    player.play();
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
                     }
@@ -304,6 +301,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[8]==false){
                     buttonPressed[8] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED I", width/2, 60);
             }
