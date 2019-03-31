@@ -218,10 +218,13 @@ public class UI extends PApplet
                 if(buttonPressed[1]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b8 = new Button(this, 255, height-200, 100, 50, "DATE", 0, 0, 100);
                     }
                     
                 } else if(buttonPressed[1]==false){
                     buttonPressed[1] = true;
+                    b8 = new Button(this, 255, height-200, 100, 50, "DATE", 0, 0, 50);
+                    
                 }
                 click.play();
                 click.rewind();
@@ -233,9 +236,11 @@ public class UI extends PApplet
                 if(buttonPressed[2]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b2 = new Button(this, 465, height-200, 100,50, "BARS", 0, 0, 100);
                     }
                 } else if(buttonPressed[2]==false){
                     buttonPressed[2] = true;
+                    b2 = new Button(this, 465, height-200, 100,50, "BARS", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
@@ -247,9 +252,11 @@ public class UI extends PApplet
                 if(buttonPressed[3]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 0, 100);
                     }
                 } else if(buttonPressed[3]==false){
                     buttonPressed[3] = true;
+                    b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
@@ -261,9 +268,11 @@ public class UI extends PApplet
                 if(buttonPressed[4]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 0, 100);
                     }
                 } else if(buttonPressed[4]==false){
                     buttonPressed[4] = true;
+                    b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
