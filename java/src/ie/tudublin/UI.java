@@ -49,7 +49,7 @@ public class UI extends PApplet
     public void setup()
     {
         minim = new Minim(this);
-        player = minim.loadFile("love.wav");
+        player = minim.loadFile("noise.wav");
         keyboard = new Computer(this, 0, 350, width, height);
         computer = new Computer(this, 100, 50, 600, 250);
         b = new Button(this,  360, height-200, 100, 50, "BALLS");
@@ -196,6 +196,7 @@ public class UI extends PApplet
         }
        
         if(mousePressed==true){
+            delay(50);
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[0]==true){
                     for(int i=0;i<10;i++){
@@ -204,6 +205,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[0]==false){
                     buttonPressed[0] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED BALLS", width/2, 60);
             }
@@ -217,6 +220,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[1]==false){
                     buttonPressed[1] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED DATE", width/2, 60);
             }
@@ -229,6 +234,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[2]==false){
                     buttonPressed[2] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED BARS", width/2, 60);
             }
@@ -241,6 +248,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[3]==false){
                     buttonPressed[3] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED STARS", width/2, 60);
             }
@@ -253,6 +262,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[4]==false){
                     buttonPressed[4] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED WORDS", width/2, 60);
             }
@@ -265,6 +276,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[5]==false){
                     buttonPressed[5] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED F", width/2, 60);
             }
@@ -277,6 +290,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[6]==false){
                     buttonPressed[6] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED G", width/2, 60);
             }
@@ -289,6 +304,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[7]==false){
                     buttonPressed[7] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED H", width/2, 60);
             }
@@ -315,6 +332,8 @@ public class UI extends PApplet
                 } else if(buttonPressed[9]==false){
                     buttonPressed[9] = true;
                 }
+                player.play();
+                player.rewind();
                 fill(255);
                 text("YOU PRESSED J", width/2, 60);
             }
