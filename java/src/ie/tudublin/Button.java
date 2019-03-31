@@ -28,10 +28,10 @@ public class Button
     public void render()
     {
         ui.noFill();
-        ui.stroke(255);
+        ui.stroke(0);
         ui.fill(color1, color2, color3);
         ui.rect(x, y, width, height, 10);
-        ui.fill(255);
+        ui.fill(0);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
     }

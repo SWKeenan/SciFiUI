@@ -23,7 +23,7 @@ public class Computer
 
     public void render()
     {
-        ui.stroke(255);
+        ui.stroke(30);
         ui.fill(fillColor);
         ui.rect(x, y, width, height, 10);
     }

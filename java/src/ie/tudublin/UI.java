@@ -6,7 +6,7 @@ import ddf.minim.*;
 public class UI extends PApplet
 {
     Minim minim;
-    AudioPlayer click, ping;
+    AudioPlayer click, ping, love;
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc,mc2,mc3,mc4;
@@ -19,6 +19,7 @@ public class UI extends PApplet
     String d1 = String.valueOf(d);
     String m1 = String.valueOf(m);
     String y1 = String.valueOf(y);
+    Heart heart;
     boolean[] buttonPressed = new boolean[10];
     Star[] stars = new Star[50];
 
@@ -51,18 +52,19 @@ public class UI extends PApplet
         minim = new Minim(this);
         click = minim.loadFile("click.wav");
         ping = minim.loadFile("ping.wav");
+        love = minim.loadFile("love.wav");
         keyboard = new Computer(this, 0, 350, width, height, 50);
         computer = new Computer(this, 100, 50, 600, 250, 0);
-        b = new Button(this,  360, height-200, 100, 50, "BALLS", 0, 0, 100);
-        b2 = new Button(this, 465, height-200, 100,50, "BARS", 0, 0, 100);
-        b3 = new Button(this, 260, height-90, 100, 50, "H", 0, 0, 100);
-        b4 = new Button(this, 365, height-90, 100, 50, "I", 0, 0, 100);
-        b5 = new Button(this, 470, height-90, 100, 50, "J", 0, 0, 100);
-        b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 0, 100);
-        b7 = new Button(this, 520, height-145, 100, 50, "G", 0, 0, 100);
-        b8 = new Button(this, 255, height-200, 100, 50, "DATE", 0, 0, 100);
-        b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 0, 100);
-        b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 0, 100);
+        b = new Button(this,  360, height-200, 100, 50, "BALLS", 255, 255, 0);
+        b2 = new Button(this, 465, height-200, 100,50, "BARS", 128, 255, 0);
+        b3 = new Button(this, 260, height-90, 100, 50, "H", 255, 0, 255);
+        b4 = new Button(this, 365, height-90, 100, 50, "I", 255, 0, 127);
+        b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 255, 0, 0);
+        b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 128, 255);
+        b7 = new Button(this, 520, height-145, 100, 50, "G", 128, 0, 255);
+        b8 = new Button(this, 255, height-200, 100, 50, "DATE", 255, 128, 0);
+        b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 255, 128);
+        b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 255, 255);
         mc = new MovingCircle(this, 200, 145, 50, 7);
         mc2 = new MovingCircle(this, 285, 90, 50, 5);
         mc3 = new MovingCircle(this, 350, 200, 50, 3);
@@ -102,11 +104,12 @@ public class UI extends PApplet
         r2 = new Radar(this, 100, height-175, 100, 0.3f);
         r3 = new Radar(this, width-100, height-50, 100, 0.01f);
         r4 = new Radar(this, width-100, height-175, 100, 0.2f);
+        heart = new Heart(this);
     }
 
     public void draw()
     {
-        background(0, 0, 100);
+        background(0,0,100);
         keyboard.render();
         computer.render();
         b.render();
@@ -195,18 +198,21 @@ public class UI extends PApplet
                 stars[i].show();
             }
         }
+        if(buttonPressed[9]==true){
+            heart.render();
+        }
        
-        if(mousePressed==true){
-            delay(50);
+        if(mousePressed){
+            mousePressed=false;
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[0]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b = new Button(this,  360, height-200, 100, 50, "BALLS", 0, 0, 100);
+                        b = new Button(this,  360, height-200, 100, 50, "BALLS", 255, 255, 0);
                     }
                 } else if(buttonPressed[0]==false){
                     buttonPressed[0] = true;
-                    b = new Button(this,  360, height-200, 100, 50, "BALLS", 0, 0, 50);
+                    b = new Button(this,  360, height-200, 100, 50, "BALLS", 130, 130, 0);
                 }
                 click.play();
                 click.rewind();
@@ -218,13 +224,12 @@ public class UI extends PApplet
                 if(buttonPressed[1]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b8 = new Button(this, 255, height-200, 100, 50, "DATE", 0, 0, 100);
+                        b8 = new Button(this, 255, height-200, 100, 50, "DATE", 255, 128, 0);
                     }
                     
                 } else if(buttonPressed[1]==false){
                     buttonPressed[1] = true;
-                    b8 = new Button(this, 255, height-200, 100, 50, "DATE", 0, 0, 50);
-                    
+                    b8 = new Button(this, 255, height-200, 100, 50, "DATE", 130, 64, 0);                    
                 }
                 click.play();
                 click.rewind();
@@ -236,11 +241,11 @@ public class UI extends PApplet
                 if(buttonPressed[2]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b2 = new Button(this, 465, height-200, 100,50, "BARS", 0, 0, 100);
+                        b2 = new Button(this, 465, height-200, 100,50, "BARS", 128, 255, 0);
                     }
                 } else if(buttonPressed[2]==false){
                     buttonPressed[2] = true;
-                    b2 = new Button(this, 465, height-200, 100,50, "BARS", 0, 0, 50);
+                    b2 = new Button(this, 465, height-200, 100,50, "BARS", 64, 130, 0);
                 }
                 click.play();
                 click.rewind();
@@ -252,11 +257,11 @@ public class UI extends PApplet
                 if(buttonPressed[3]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 0, 100);
+                        b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 255, 128);
                     }
                 } else if(buttonPressed[3]==false){
                     buttonPressed[3] = true;
-                    b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 0, 50);
+                    b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 130, 64);
                 }
                 click.play();
                 click.rewind();
@@ -268,11 +273,11 @@ public class UI extends PApplet
                 if(buttonPressed[4]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 0, 100);
+                        b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 255, 255);
                     }
                 } else if(buttonPressed[4]==false){
                     buttonPressed[4] = true;
-                    b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 0, 50);
+                    b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 130, 130);
                 }
                 click.play();
                 click.rewind();
@@ -284,11 +289,11 @@ public class UI extends PApplet
                 if(buttonPressed[5]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 0, 100);
+                        b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 128, 255);
                     }
                 } else if(buttonPressed[5]==false){
                     buttonPressed[5] = true;
-                    b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 0, 50);
+                    b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 64, 130);
                 }
                 click.play();
                 click.rewind();
@@ -300,11 +305,11 @@ public class UI extends PApplet
                 if(buttonPressed[6]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b7 = new Button(this, 520, height-145, 100, 50, "G", 0, 0, 100);
+                        b7 = new Button(this, 520, height-145, 100, 50, "G", 128, 0, 255);
                     }
                 } else if(buttonPressed[6]==false){
                     buttonPressed[6] = true;
-                    b7 = new Button(this, 520, height-145, 100, 50, "G", 0, 0, 50);
+                    b7 = new Button(this, 520, height-145, 100, 50, "G", 64, 0, 130);
                 }
                 click.play();
                 click.rewind();
@@ -316,11 +321,11 @@ public class UI extends PApplet
                 if(buttonPressed[7]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b3 = new Button(this, 260, height-90, 100, 50, "H", 0, 0, 100);
+                        b3 = new Button(this, 260, height-90, 100, 50, "H", 255, 0, 255);
                     }
                 } else if(buttonPressed[7]==false){
                     buttonPressed[7] = true;
-                    b3 = new Button(this, 260, height-90, 100, 50, "H", 0, 0, 50);
+                    b3 = new Button(this, 260, height-90, 100, 50, "H", 130, 0, 130);
                 }
                 click.play();
                 click.rewind();
@@ -332,11 +337,11 @@ public class UI extends PApplet
                 if(buttonPressed[8]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b4 = new Button(this, 365, height-90, 100, 50, "I", 0, 0, 100);
+                        b4 = new Button(this, 365, height-90, 100, 50, "I", 255, 0, 127);
                     }
                 } else if(buttonPressed[8]==false){
                     buttonPressed[8] = true;
-                    b4 = new Button(this, 365, height-90, 100, 50, "I", 0, 0, 50);
+                    b4 = new Button(this, 365, height-90, 100, 50, "I", 130, 0, 60);
                 }
                 click.play();
                 click.rewind();
@@ -348,16 +353,18 @@ public class UI extends PApplet
                 if(buttonPressed[9]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b5 = new Button(this, 470, height-90, 100, 50, "J", 0, 0, 100);
+                        b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 255, 0, 0);
                     }
                 } else if(buttonPressed[9]==false){
+                    love.play();
+                    love.rewind();
                     buttonPressed[9] = true;
-                    b5 = new Button(this, 470, height-90, 100, 50, "J", 0, 0, 50);
+                    b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 130, 0, 0);
                 }
                 click.play();
                 click.rewind();
                 fill(255);
-                text("YOU PRESSED J", width/2, 60);
+                text("YOU PRESSED LOVE", width/2, 60);
             }
 
             else if(mouseX>0 && mouseX<width && mouseY>0 && mouseY < height){

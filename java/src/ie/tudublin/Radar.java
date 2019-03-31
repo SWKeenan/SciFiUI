@@ -29,7 +29,7 @@ public class Radar{
     public void render()
     {
         ui.strokeWeight(3);
-        ui.stroke(250);
+        ui.stroke(150);
         ui.noFill();
 
         ui.pushMatrix();
