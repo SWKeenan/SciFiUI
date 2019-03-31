@@ -49,7 +49,7 @@ public class UI extends PApplet
     public void setup()
     {
         minim = new Minim(this);
-        player = minim.loadFile("noise.wav");
+        player = minim.loadFile("click.wav");
         keyboard = new Computer(this, 0, 350, width, height);
         computer = new Computer(this, 100, 50, 600, 250);
         b = new Button(this,  360, height-200, 100, 50, "BALLS");
