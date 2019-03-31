@@ -7,20 +7,19 @@ public class Star{
     UI ui;
     private float x;
     private float y;
-    private float z;
 
-    public Star(UI ui, float x, float y, float z){
+    public Star(UI ui, float x, float y){
         this.ui = ui;
         this.x = x;
         this.y = y;
-        this.z = z;
     }
 
     public void update()
     {
-        z = z - 10;
-        if(z < 1){
-            z = 695;
+        x = x - 10;
+        if(x < 105){
+            x = 695;
+            y = ui.random(55,295);
         }
     }
     
@@ -28,8 +27,6 @@ public class Star{
     {
         ui.fill(255);
         ui.noStroke();
-        float sx = ui.map(x/z,0,1,0,695);
-        float sy = ui.map(y/z,0,1,0,295);
-        ui.ellipse(sx,sy,8,8);
+        ui.ellipse(x,y,8,8);
     }
 }
