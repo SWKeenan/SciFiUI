@@ -284,9 +284,11 @@ public class UI extends PApplet
                 if(buttonPressed[5]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 0, 100);
                     }
                 } else if(buttonPressed[5]==false){
                     buttonPressed[5] = true;
+                    b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
@@ -298,9 +300,11 @@ public class UI extends PApplet
                 if(buttonPressed[6]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b7 = new Button(this, 520, height-145, 100, 50, "G", 0, 0, 100);
                     }
                 } else if(buttonPressed[6]==false){
                     buttonPressed[6] = true;
+                    b7 = new Button(this, 520, height-145, 100, 50, "G", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
@@ -312,9 +316,11 @@ public class UI extends PApplet
                 if(buttonPressed[7]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b3 = new Button(this, 260, height-90, 100, 50, "H", 0, 0, 100);
                     }
                 } else if(buttonPressed[7]==false){
                     buttonPressed[7] = true;
+                    b3 = new Button(this, 260, height-90, 100, 50, "H", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
@@ -326,9 +332,11 @@ public class UI extends PApplet
                 if(buttonPressed[8]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b4 = new Button(this, 365, height-90, 100, 50, "I", 0, 0, 100);
                     }
                 } else if(buttonPressed[8]==false){
                     buttonPressed[8] = true;
+                    b4 = new Button(this, 365, height-90, 100, 50, "I", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
@@ -340,9 +348,11 @@ public class UI extends PApplet
                 if(buttonPressed[9]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b5 = new Button(this, 470, height-90, 100, 50, "J", 0, 0, 100);
                     }
                 } else if(buttonPressed[9]==false){
                     buttonPressed[9] = true;
+                    b5 = new Button(this, 470, height-90, 100, 50, "J", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
