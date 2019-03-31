@@ -53,16 +53,16 @@ public class UI extends PApplet
         ping = minim.loadFile("ping.wav");
         keyboard = new Computer(this, 0, 350, width, height);
         computer = new Computer(this, 100, 50, 600, 250);
-        b = new Button(this,  360, height-200, 100, 50, "BALLS");
-        b2 = new Button(this, 465, height-200, 100,50, "BARS");
-        b3 = new Button(this, 260, height-90, 100, 50, "H");
-        b4 = new Button(this, 365, height-90, 100, 50, "I");
-        b5 = new Button(this, 470, height-90, 100, 50, "J");
-        b6 = new Button(this, 415, height-145, 100, 50, "F");
-        b7 = new Button(this, 520, height-145, 100, 50, "G");
-        b8 = new Button(this, 255, height-200, 100, 50, "DATE");
-        b9 = new Button(this, 205, height-145, 100, 50, "STARS");
-        b10 = new Button(this, 310, height-145, 100, 50, "WORDS");
+        b = new Button(this,  360, height-200, 100, 50, "BALLS", 0, 0, 100);
+        b2 = new Button(this, 465, height-200, 100,50, "BARS", 0, 0, 100);
+        b3 = new Button(this, 260, height-90, 100, 50, "H", 0, 0, 100);
+        b4 = new Button(this, 365, height-90, 100, 50, "I", 0, 0, 100);
+        b5 = new Button(this, 470, height-90, 100, 50, "J", 0, 0, 100);
+        b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 0, 100);
+        b7 = new Button(this, 520, height-145, 100, 50, "G", 0, 0, 100);
+        b8 = new Button(this, 255, height-200, 100, 50, "DATE", 0, 0, 100);
+        b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 0, 100);
+        b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 0, 100);
         mc = new MovingCircle(this, 200, 145, 50, 7);
         mc2 = new MovingCircle(this, 285, 90, 50, 5);
         mc3 = new MovingCircle(this, 350, 200, 50, 3);
@@ -202,9 +202,11 @@ public class UI extends PApplet
                 if(buttonPressed[0]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
+                        b = new Button(this,  360, height-200, 100, 50, "BALLS", 0, 0, 100);
                     }
                 } else if(buttonPressed[0]==false){
                     buttonPressed[0] = true;
+                    b = new Button(this,  360, height-200, 100, 50, "BALLS", 0, 0, 50);
                 }
                 click.play();
                 click.rewind();
