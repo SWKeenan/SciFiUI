@@ -24,18 +24,9 @@ public class UI extends PApplet
     Star[] stars = new Star[50];
     Triangle[] triangles = new Triangle[7];
     int fade = 153;
+    Man man1;
 
     boolean[] keys = new boolean[1024];
-
-    public void keyPressed()
-    {
-        keys[LEFT] = true;
-    }
-    
-    public void keyReleased()
-    {
-        keys[keyCode] = true;
-    }
 
     public boolean checkKey(int c)
     {
@@ -111,6 +102,7 @@ public class UI extends PApplet
         for(int i=0;i<triangles.length;i++){
             triangles[i] = new Triangle(this,random(200,400),295,400,random(95,295),random(400,600),295,5);
         }
+        man1 = new Man(this,500,500);
     }
 
     public void draw()
@@ -222,6 +214,9 @@ public class UI extends PApplet
                 triangles[i].update();
                 triangles[i].render();
             }
+        }
+        if(buttonPressed[6]==true){
+            man1.draw();
         }
        
         if(mousePressed){
