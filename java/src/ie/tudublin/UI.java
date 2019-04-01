@@ -28,10 +28,16 @@ public class UI extends PApplet
 
     boolean[] keys = new boolean[1024];
 
-    public boolean checkKey(int c)
+    public void keyPressed()
     {
-        return keys[c] || keys [Character.toUpperCase(c)];
+        keys[key] = true;
     }
+    
+    public void keyReleased()
+    {
+        keys[key] = false;
+    }
+
   
     public void settings()
     {
