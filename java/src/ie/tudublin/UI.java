@@ -22,8 +22,8 @@ public class UI extends PApplet
     Heart heart;
     boolean[] buttonPressed = new boolean[10];
     Star[] stars = new Star[50];
+    Triangle[] triangles = new Triangle[7];
     int fade = 153;
-    Triangle t1;
 
     boolean[] keys = new boolean[1024];
 
@@ -63,7 +63,7 @@ public class UI extends PApplet
         b3 = new Button(this, 260, height-90, 100, 50, "H", 255, 0, 255);
         b4 = new Button(this, 365, height-90, 100, 50, "I", 255, 0, 127);
         b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 255, 0, 0);
-        b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 128, 255);
+        b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 128, 255);
         b7 = new Button(this, 520, height-145, 100, 50, "G", 128, 0, 255);
         b8 = new Button(this, 255, height-200, 100, 50, "DATE", 255, 128, 0);
         b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 255, 128);
@@ -108,7 +108,9 @@ public class UI extends PApplet
         r3 = new Radar(this, width-100, height-50, 100, 0.01f);
         r4 = new Radar(this, width-100, height-175, 100, 0.2f);
         heart = new Heart(this);
-        t1 = new Triangle(this,200,295,400,95,600,295);
+        for(int i=0;i<triangles.length;i++){
+            triangles[i] = new Triangle(this,random(200,400),295,400,random(95,295),random(400,600),295,5);
+        }
     }
 
     public void draw()
@@ -215,8 +217,11 @@ public class UI extends PApplet
             heart.render();
         }
         if(buttonPressed[5]==true){
-            t1.update();
-            t1.render();
+            for(int i=0;i<triangles.length;i++){
+                fill(random(255));
+                triangles[i].update();
+                triangles[i].render();
+            }
         }
        
         if(mousePressed){
@@ -306,16 +311,16 @@ public class UI extends PApplet
                 if(buttonPressed[5]==true){
                     for(int i=0;i<10;i++){
                         buttonPressed[i] = false;
-                        b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 128, 255);
+                        b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 128, 255);
                     }
                 } else if(buttonPressed[5]==false){
                     buttonPressed[5] = true;
-                    b6 = new Button(this, 415, height-145, 100, 50, "F", 0, 64, 130);
+                    b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 64, 130);
                 }
                 click.play();
                 click.rewind();
                 fill(255);
-                text("YOU PRESSED F", width/2, 60);
+                text("YOU PRESSED TRIANGLES", width/2, 60);
             }
         
             else if(mouseX>520 && mouseX <620 && mouseY>height-145 && mouseY <height-95){

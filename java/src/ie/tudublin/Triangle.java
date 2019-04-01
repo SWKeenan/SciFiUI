@@ -10,9 +10,11 @@ public class Triangle
     private float y2;
     private float z1;
     private float z2;
+    private float speed;
+    private int TriCol1,TriCol2,TriCol3;
     UI ui;
 
-    public Triangle(UI ui, float x1, float x2, float y1, float y2, float z1, float z2)
+    public Triangle(UI ui, float x1, float x2, float y1, float y2, float z1, float z2, float speed)
     {
         this.ui = ui;
         this.x1 = x1;
@@ -21,6 +23,7 @@ public class Triangle
         this.y2 = y2;
         this.z1 = z1;
         this.z2 = z2;
+        this.speed = speed;
     }
     
     public void render()
@@ -30,9 +33,9 @@ public class Triangle
 
     public void update()
     {
-        x1++;
-        y2++;
-        z1--;
+        x1+= speed;
+        y2+= speed;
+        z1-= speed;
         if(x1>400){
             x1=200;
         }
@@ -42,6 +45,5 @@ public class Triangle
         else if(z1<400){
             z1=600;
         }
-      //200,295,400,55,600,295
     }
 }
