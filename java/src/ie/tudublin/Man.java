@@ -5,17 +5,18 @@ import processing.core.*;
 public class Man {
 
     UI ui;
-    private float x;
-    private float y;
+    int x;
+    int y;
+    int speed;
     PImage spriteSheet;
     PImage [][] movement;
     boolean[] keys = new boolean[128];
 
-    public Man(UI ui, float x, float y){
+    public Man(UI ui, int x, int y, int speed){
         this.ui = ui;
         this.x = x;
         this.y = y;
-
+        this.speed = speed;
         setupSprites();
     }
 
@@ -33,28 +34,39 @@ public class Man {
     public void draw()
     {
         for(int i=0;i<3;i++){
-            ui.image(movement[0][i],i*64,0);
-            ui.image(movement[1][i],i*64,70);
-            ui.image(movement[2][i],i*64,140);
-            ui.image(movement[3][i],i*64,210);
+            ui.image(movement[1][0],x,y);
         }
-        ui.fill(255);
         move();
-        ui.ellipse(x,y,20,20);
+    }
+
+    public void update()
+    {
+        if(x<100){
+            x = 600;
+        }
+        else if(x>650){
+            x = 100;
+        }
+        else if(y>235){
+            y = 50;
+        }
+        else if(y<50){
+            y = 235;
+        }
     }
 
     void move(){
         if(ui.key == 'a'){
-            x--;
+            x-=speed;
         }
         if(ui.key == 'd'){
-            x++;
+            x+=speed;
         }
         if(ui.key=='w'){
-            y--;
+            y-=speed;
         }
         if(ui.key=='s'){
-            y++;
+            y+=speed;
         }
     }
 

@@ -6,7 +6,7 @@ import ddf.minim.*;
 public class UI extends PApplet
 {
     Minim minim;
-    AudioPlayer click, ping, love, startup;
+    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse;
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc,mc2,mc3,mc4;
@@ -53,6 +53,9 @@ public class UI extends PApplet
         click = minim.loadFile("click.wav");
         ping = minim.loadFile("ping.wav");
         love = minim.loadFile("love.wav");
+        bubbling = minim.loadFile("bubbling.wav");
+        morse = minim.loadFile("morse.wav");
+        bouncy = minim.loadFile("bouncyBounce.wav");
         keyboard = new Computer(this, 0, 350, width, height, 50);
         computer = new Computer(this, 100, 50, 600, 250, 0);
         b = new Button(this,  360, height-200, 100, 50, "BALLS", 255, 255, 0);
@@ -61,7 +64,7 @@ public class UI extends PApplet
         b4 = new Button(this, 365, height-90, 100, 50, "I", 255, 0, 127);
         b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 255, 0, 0);
         b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 128, 255);
-        b7 = new Button(this, 520, height-145, 100, 50, "G", 128, 0, 255);
+        b7 = new Button(this, 520, height-145, 100, 50, "MAN", 128, 0, 255);
         b8 = new Button(this, 255, height-200, 100, 50, "DATE", 255, 128, 0);
         b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 255, 128);
         b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 255, 255);
@@ -108,7 +111,7 @@ public class UI extends PApplet
         for(int i=0;i<triangles.length;i++){
             triangles[i] = new Triangle(this,random(200,400),295,400,random(95,295),random(400,600),295,5);
         }
-        man1 = new Man(this,500,500);
+        man1 = new Man(this,width/2,150,4);
     }
 
     public void draw()
@@ -222,6 +225,7 @@ public class UI extends PApplet
             }
         }
         if(buttonPressed[6]==true){
+            man1.update();
             man1.draw();
         }
        
@@ -230,10 +234,14 @@ public class UI extends PApplet
             if(mouseX>360 && mouseX <460 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[0]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
                         buttonPressed[i] = false;
                         b = new Button(this,  360, height-200, 100, 50, "BALLS", 255, 255, 0);
                     }
                 } else if(buttonPressed[0]==false){
+                    bouncy.loop();
                     buttonPressed[0] = true;
                     b = new Button(this,  360, height-200, 100, 50, "BALLS", 130, 130, 0);
                 }
@@ -246,6 +254,9 @@ public class UI extends PApplet
             else if(mouseX>255 && mouseX <355 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[1]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
                         buttonPressed[i] = false;
                         b8 = new Button(this, 255, height-200, 100, 50, "DATE", 255, 128, 0);
                     }
@@ -263,10 +274,15 @@ public class UI extends PApplet
             else if(mouseX>465 && mouseX <565 && mouseY>height-200 && mouseY <height-150){
                 if(buttonPressed[2]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
+                        morse.pause();
                         buttonPressed[i] = false;
                         b2 = new Button(this, 465, height-200, 100,50, "BARS", 128, 255, 0);
                     }
                 } else if(buttonPressed[2]==false){
+                    morse.loop();
                     buttonPressed[2] = true;
                     b2 = new Button(this, 465, height-200, 100,50, "BARS", 64, 130, 0);
                 }
@@ -279,6 +295,9 @@ public class UI extends PApplet
             else if(mouseX>205 && mouseX <305 && mouseY>height-145 && mouseY <height-95){
                 if(buttonPressed[3]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
                         buttonPressed[i] = false;
                         b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 255, 128);
                     }
@@ -295,6 +314,9 @@ public class UI extends PApplet
             else if(mouseX>310 && mouseX <410 && mouseY>height-145 && mouseY <height-95){
                 if(buttonPressed[4]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
                         buttonPressed[i] = false;
                         b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 255, 255);
                     }
@@ -311,10 +333,13 @@ public class UI extends PApplet
             else if(mouseX>415 && mouseX <515 && mouseY>height-145 && mouseY <height-95){
                 if(buttonPressed[5]==true){
                     for(int i=0;i<10;i++){
-                        buttonPressed[i] = false;
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();                        buttonPressed[i] = false;
                         b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 128, 255);
                     }
                 } else if(buttonPressed[5]==false){
+                    bubbling.loop();
                     buttonPressed[5] = true;
                     b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 64, 130);
                 }
@@ -327,22 +352,28 @@ public class UI extends PApplet
             else if(mouseX>520 && mouseX <620 && mouseY>height-145 && mouseY <height-95){
                 if(buttonPressed[6]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
                         buttonPressed[i] = false;
-                        b7 = new Button(this, 520, height-145, 100, 50, "G", 128, 0, 255);
+                        b7 = new Button(this, 520, height-145, 100, 50, "`MAN", 128, 0, 255);
                     }
                 } else if(buttonPressed[6]==false){
                     buttonPressed[6] = true;
-                    b7 = new Button(this, 520, height-145, 100, 50, "G", 64, 0, 130);
+                    b7 = new Button(this, 520, height-145, 100, 50, "MAN", 64, 0, 130);
                 }
                 click.play();
                 click.rewind();
                 fill(255);
-                text("YOU PRESSED G", width/2, 60);
+                text("YOU PRESSED MAN", width/2, 60);
             }
         
             else if(mouseX>260 && mouseX <360 && mouseY>height-90 && mouseY <height-40){
                 if(buttonPressed[7]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
                         buttonPressed[i] = false;
                         b3 = new Button(this, 260, height-90, 100, 50, "H", 255, 0, 255);
                     }
@@ -359,6 +390,9 @@ public class UI extends PApplet
             else if(mouseX>365 && mouseX <465 && mouseY>height-90 && mouseY <height-40){
                 if(buttonPressed[8]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
                         buttonPressed[i] = false;
                         b4 = new Button(this, 365, height-90, 100, 50, "I", 255, 0, 127);
                     }
@@ -375,6 +409,9 @@ public class UI extends PApplet
             else if(mouseX>470 && mouseX <570 && mouseY>height-90 && mouseY <height-40){
                 if(buttonPressed[9]==true){
                     for(int i=0;i<10;i++){
+                        bouncy.pause();
+                        bubbling.pause();
+                        love.pause();
                         buttonPressed[i] = false;
                         b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 255, 0, 0);
                     }
