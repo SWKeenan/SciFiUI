@@ -6,7 +6,7 @@ import ddf.minim.*;
 public class UI extends PApplet
 {
     Minim minim;
-    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse;
+    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse, noise, scan, space, jolly;
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc,mc2,mc3,mc4;
@@ -53,7 +53,11 @@ public class UI extends PApplet
         click = minim.loadFile("click.wav");
         ping = minim.loadFile("ping.wav");
         love = minim.loadFile("love.wav");
+        scan = minim.loadFile("scan.wav");
+        noise = minim.loadFile("noise.wav");
         bubbling = minim.loadFile("bubbling.wav");
+        space = minim.loadFile("space.wav");
+        jolly = minim.loadFile("jolly.wav");
         morse = minim.loadFile("morse.wav");
         bouncy = minim.loadFile("bouncyBounce.wav");
         keyboard = new Computer(this, 0, 350, width, height, 50);
@@ -71,7 +75,7 @@ public class UI extends PApplet
         mc = new MovingCircle(this, 200, 145, 50, 7);
         mc2 = new MovingCircle(this, 285, 90, 50, 5);
         mc3 = new MovingCircle(this, 350, 200, 50, 3);
-        mc4 = new MovingCircle(this, 300, 255, 50, 6);
+        mc4 = new MovingCircle(this, 460, 255, 50, 6);
         bar = new AnimatedBar(this, 360, 50, 20, 100);
         bar2 = new AnimatedBar(this, 380, 50, 20, 120);
         bar3 = new AnimatedBar(this, 400, 50, 20, 80);
@@ -257,11 +261,13 @@ public class UI extends PApplet
                         bouncy.pause();
                         bubbling.pause();
                         love.pause();
+                        scan.pause();
                         buttonPressed[i] = false;
                         b8 = new Button(this, 255, height-200, 100, 50, "DATE", 255, 128, 0);
                     }
                     
                 } else if(buttonPressed[1]==false){
+                    scan.loop();
                     buttonPressed[1] = true;
                     b8 = new Button(this, 255, height-200, 100, 50, "DATE", 130, 64, 0);                    
                 }
@@ -298,10 +304,12 @@ public class UI extends PApplet
                         bouncy.pause();
                         bubbling.pause();
                         love.pause();
+                        space.pause();
                         buttonPressed[i] = false;
                         b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 255, 128);
                     }
                 } else if(buttonPressed[3]==false){
+                    space.loop();
                     buttonPressed[3] = true;
                     b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 130, 64);
                 }
@@ -317,10 +325,12 @@ public class UI extends PApplet
                         bouncy.pause();
                         bubbling.pause();
                         love.pause();
+                        noise.pause();
                         buttonPressed[i] = false;
                         b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 255, 255);
                     }
                 } else if(buttonPressed[4]==false){
+                    noise.loop();
                     buttonPressed[4] = true;
                     b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 130, 130);
                 }
@@ -355,10 +365,12 @@ public class UI extends PApplet
                         bouncy.pause();
                         bubbling.pause();
                         love.pause();
+                        jolly.pause();
                         buttonPressed[i] = false;
-                        b7 = new Button(this, 520, height-145, 100, 50, "`MAN", 128, 0, 255);
+                        b7 = new Button(this, 520, height-145, 100, 50, "MAN", 128, 0, 255);
                     }
                 } else if(buttonPressed[6]==false){
+                    jolly.loop();
                     buttonPressed[6] = true;
                     b7 = new Button(this, 520, height-145, 100, 50, "MAN", 64, 0, 130);
                 }

@@ -34,7 +34,7 @@ public class Man {
     public void draw()
     {
         for(int i=0;i<3;i++){
-            ui.image(movement[1][0],x,y);
+            ui.image(movement[0][1],x,y);
         }
         move();
     }
