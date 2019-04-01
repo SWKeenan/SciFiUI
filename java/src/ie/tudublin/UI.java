@@ -6,7 +6,7 @@ import ddf.minim.*;
 public class UI extends PApplet
 {
     Minim minim;
-    AudioPlayer click, ping, love;
+    AudioPlayer click, ping, love, startup;
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc,mc2,mc3,mc4;
@@ -22,6 +22,7 @@ public class UI extends PApplet
     Heart heart;
     boolean[] buttonPressed = new boolean[10];
     Star[] stars = new Star[50];
+    int fade = 153;
 
     boolean[] keys = new boolean[1024];
 
@@ -50,6 +51,7 @@ public class UI extends PApplet
     public void setup()
     {
         minim = new Minim(this);
+        startup = minim.loadFile("startup.wav");
         click = minim.loadFile("click.wav");
         ping = minim.loadFile("ping.wav");
         love = minim.loadFile("love.wav");
@@ -109,9 +111,18 @@ public class UI extends PApplet
 
     public void draw()
     {
+        startup.play();
         background(0,0,100);
         keyboard.render();
         computer.render();
+        for(int i=0;i<4;i++){
+            delay(3);
+            fill(0,fade,0);
+            fade--;
+        }
+        textSize(40);
+        text("WELCOME",width/2,175);
+        textSize(12);
         b.render();
         b2.render();
         b3.render();
