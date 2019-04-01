@@ -1,7 +1,5 @@
 package ie.tudublin;
 
-import processing.core.*;
-
 public class Star{
 
     UI ui;

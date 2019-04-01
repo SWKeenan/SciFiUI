@@ -23,6 +23,7 @@ public class UI extends PApplet
     boolean[] buttonPressed = new boolean[10];
     Star[] stars = new Star[50];
     int fade = 153;
+    Triangle t1;
 
     boolean[] keys = new boolean[1024];
 
@@ -107,6 +108,7 @@ public class UI extends PApplet
         r3 = new Radar(this, width-100, height-50, 100, 0.01f);
         r4 = new Radar(this, width-100, height-175, 100, 0.2f);
         heart = new Heart(this);
+        t1 = new Triangle(this,200,295,400,95,600,295);
     }
 
     public void draw()
@@ -211,6 +213,10 @@ public class UI extends PApplet
         }
         if(buttonPressed[9]==true){
             heart.render();
+        }
+        if(buttonPressed[5]==true){
+            t1.update();
+            t1.render();
         }
        
         if(mousePressed){

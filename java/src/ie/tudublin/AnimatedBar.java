@@ -1,7 +1,5 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
-
 public class AnimatedBar{
     UI ui;
     private float x;

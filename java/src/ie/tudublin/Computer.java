@@ -1,7 +1,5 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
-
 public class Computer
 {
     UI ui;

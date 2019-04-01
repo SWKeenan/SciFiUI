@@ -14,6 +14,7 @@ public class Heart
     public void render()
     {
         ui.fill(255, 0, 0);
+        ui.stroke(210,0,0);
         ui.beginShape();
         ui.curveVertex(400, 600);
         ui.curveVertex(400, 270);
