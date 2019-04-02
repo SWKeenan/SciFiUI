@@ -21,13 +21,17 @@ public class Cat {
 
     public void draw()
     {
+        ui.scale(ui.mouseX / (float)100);
+        ui.translate(ui.mouseX--,150);
+        if(ui.mouseX > 600){
+            ui.scale(ui.mouseX / (float)100);
+        }
         ui.image(cat1,0,0);
     }
 
     public void update()
     {
        if(ui.mouseX > 700){
-           ui.scale((float)0.5);
        }
     }
 }
