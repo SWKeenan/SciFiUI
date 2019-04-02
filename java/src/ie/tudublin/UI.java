@@ -25,6 +25,8 @@ public class UI extends PApplet
     Triangle[] triangles = new Triangle[7];
     int fade = 153;
     Man man1;
+    Shape shape,shape2,shape3;
+    boolean welcomeOn = true;
 
     boolean[] keys = new boolean[1024];
 
@@ -64,7 +66,7 @@ public class UI extends PApplet
         computer = new Computer(this, 100, 50, 600, 250, 0);
         b = new Button(this,  360, height-200, 100, 50, "BALLS", 255, 255, 0);
         b2 = new Button(this, 465, height-200, 100,50, "BARS", 128, 255, 0);
-        b3 = new Button(this, 260, height-90, 100, 50, "H", 255, 0, 255);
+        b3 = new Button(this, 260, height-90, 100, 50, "FLY", 255, 0, 255);
         b4 = new Button(this, 365, height-90, 100, 50, "I", 255, 0, 127);
         b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 255, 0, 0);
         b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 128, 255);
@@ -116,6 +118,9 @@ public class UI extends PApplet
             triangles[i] = new Triangle(this,random(200,400),295,400,random(95,295),random(400,600),295,5);
         }
         man1 = new Man(this,width/2,150,4);
+        shape = new Shape(this,350,150,1);
+        shape2 = new Shape(this,400,110,30);
+        shape3 = new Shape(this,280,130,80);
     }
 
     public void draw()
@@ -129,9 +134,11 @@ public class UI extends PApplet
             fill(0,fade,0);
             fade--;
         }
-        textSize(40);
-        text("WELCOME",width/2,175);
-        textSize(12);
+        if(welcomeOn==true){
+            textSize(40);
+            text("WELCOME",width/2,175);
+            textSize(12);
+        }
         b.render();
         b2.render();
         b3.render();
@@ -234,6 +241,14 @@ public class UI extends PApplet
             stroke(255);
             fill(255);
             text("Press W/A/S/D to move",170,55);
+        }
+        if(buttonPressed[7]==true){
+            shape.update();
+            shape.draw();  
+            shape2.update();
+            shape2.draw();   
+            shape3.update();
+            shape3.draw();      
         }
        
         if(mousePressed){
@@ -390,16 +405,20 @@ public class UI extends PApplet
                         bubbling.pause();
                         love.pause();
                         buttonPressed[i] = false;
-                        b3 = new Button(this, 260, height-90, 100, 50, "H", 255, 0, 255);
+                        b3 = new Button(this, 260, height-90, 100, 50, "FLY", 255, 0, 255);
+                        computer = new Computer(this, 100, 50, 600, 250, 0);
+                        welcomeOn = false;
                     }
                 } else if(buttonPressed[7]==false){
                     buttonPressed[7] = true;
-                    b3 = new Button(this, 260, height-90, 100, 50, "H", 130, 0, 130);
+                    b3 = new Button(this, 260, height-90, 100, 50, "FLY", 130, 0, 130);
+                    computer = new Computer(this, 100, 50, 600, 250, 255);
+                    welcomeOn = false;
                 }
                 click.play();
                 click.rewind();
                 fill(255);
-                text("YOU PRESSED H", width/2, 60);
+                text("YOU PRESSED FLY", width/2, 60);
             }
      
             else if(mouseX>365 && mouseX <465 && mouseY>height-90 && mouseY <height-40){
