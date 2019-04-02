@@ -7,7 +7,6 @@ public class Cat {
     UI ui;
     PImage cat1;
     int currentFrame;
-    PImage [][] movement;
     boolean[] keys = new boolean[128];
 
     public Cat(UI ui){
@@ -21,17 +20,14 @@ public class Cat {
 
     public void draw()
     {
-        ui.scale(ui.mouseX / (float)100);
-        ui.translate(ui.mouseX--,150);
-        if(ui.mouseX > 600){
-            ui.scale(ui.mouseX / (float)100);
-        }
-        ui.image(cat1,0,0);
-    }
+        ui.translate(350,150);
 
-    public void update()
-    {
-       if(ui.mouseX > 700){
-       }
+        if(ui.mouseX < 600){
+            ui.scale((float)0.10);
+            ui.image(cat1,0,0);
+        }
+        else{
+
+        }
     }
 }
