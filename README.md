@@ -4,8 +4,6 @@ Name: Shane Keenan
 
 Student Number: C17702215
 
-Fork this repository and use it a starter project for your assignment
-
 # Description of the assignment
 
 The description will go here.
