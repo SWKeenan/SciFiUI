@@ -26,6 +26,8 @@ public class Cat {
 
     public void update()
     {
-       
+       if(ui.mouseX > 700){
+           ui.scale((float)0.5);
+       }
     }
 }
