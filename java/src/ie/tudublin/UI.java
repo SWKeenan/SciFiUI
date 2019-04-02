@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
+import processing.core.*;
 import ddf.minim.*;
 
 public class UI extends PApplet
@@ -231,6 +231,9 @@ public class UI extends PApplet
         if(buttonPressed[6]==true){
             man1.update();
             man1.draw();
+            stroke(255);
+            fill(255);
+            text("Press W/A/S/D to move",170,55);
         }
        
         if(mousePressed){
