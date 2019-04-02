@@ -6,7 +6,7 @@ import ddf.minim.*;
 public class UI extends PApplet
 {
     Minim minim;
-    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse, noise, scan, space, clank, jolly, fly;
+    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse, noise, scan, meow, space, clank, jolly, fly;
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc,mc2,mc3,mc4;
@@ -56,6 +56,7 @@ public class UI extends PApplet
         clank = minim.loadFile("clank.mp3");
         click = minim.loadFile("click.wav");
         ping = minim.loadFile("ping.wav");
+        meow = minim.loadFile("meow.wav");
         love = minim.loadFile("love.wav");
         fly = minim.loadFile("fly.wav");
         scan = minim.loadFile("scan.wav");
@@ -70,7 +71,7 @@ public class UI extends PApplet
         b = new Button(this,  360, height-200, 100, 50, "BALLS", 255, 255, 0);
         b2 = new Button(this, 465, height-200, 100,50, "BARS", 128, 255, 0);
         b3 = new Button(this, 260, height-90, 100, 50, "FLY", 255, 0, 255);
-        b4 = new Button(this, 365, height-90, 100, 50, "I", 255, 0, 127);
+        b4 = new Button(this, 365, height-90, 100, 50, "TIGER", 255, 0, 127);
         b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 255, 0, 0);
         b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 128, 255);
         b7 = new Button(this, 520, height-145, 100, 50, "MAN", 128, 0, 255);
@@ -255,6 +256,13 @@ public class UI extends PApplet
         if(buttonPressed[8]==true){
             cat1.update();
             cat1.draw();
+            if(mouseY <= 200){
+                meow.play();
+            }
+            else if(mouseY >= 200){
+                meow.pause();
+                meow.rewind();
+            }
         }
        
         if(mousePressed){
@@ -436,16 +444,16 @@ public class UI extends PApplet
                         bubbling.pause();
                         love.pause();
                         buttonPressed[i] = false;
-                        b4 = new Button(this, 365, height-90, 100, 50, "I", 255, 0, 127);
+                        b4 = new Button(this, 365, height-90, 100, 50, "TIGER", 255, 0, 127);
                     }
                 } else if(buttonPressed[8]==false){
                     buttonPressed[8] = true;
-                    b4 = new Button(this, 365, height-90, 100, 50, "I", 130, 0, 60);                    
+                    b4 = new Button(this, 365, height-90, 100, 50, "TIGER", 130, 0, 60);                    
                 }
                 click.play();
                 click.rewind();
                 fill(255);
-                text("YOU PRESSED I", width/2, 60);
+                text("YOU PRESSED TIGER", width/2, 60);
             }
   
             else if(mouseX>470 && mouseX <570 && mouseY>height-90 && mouseY <height-40){

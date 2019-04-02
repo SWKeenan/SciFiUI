@@ -1,9 +1,9 @@
 package ie.tudublin;
 
 import processing.core.*;
+//import ddf.minim.*;
 
 public class Cat {
-
     UI ui;
     PImage cat1;
     int currentFrame;
@@ -29,9 +29,6 @@ public class Cat {
         else if(ui.mouseY > 200){
             ui.scale((float)0.10);
             ui.image(cat1,0,0);
-        }
-        else{
-
         }
     }
 
