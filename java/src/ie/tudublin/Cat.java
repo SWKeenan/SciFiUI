@@ -22,12 +22,20 @@ public class Cat {
     {
         ui.translate(350,150);
 
-        if(ui.mouseX < 600){
+        if(ui.mouseY > 200){
             ui.scale((float)0.10);
             ui.image(cat1,0,0);
         }
         else{
 
+        }
+    }
+
+    public void update()
+    {
+        if(ui.mouseY > 200){
+            ui.fill(255,128,0);
+            ui.text("Touch the tiger",390,290);
         }
     }
 }

@@ -253,6 +253,7 @@ public class UI extends PApplet
             }     
         }
         if(buttonPressed[8]==true){
+            cat1.update();
             cat1.draw();
         }
        
@@ -439,8 +440,7 @@ public class UI extends PApplet
                     }
                 } else if(buttonPressed[8]==false){
                     buttonPressed[8] = true;
-                    b4 = new Button(this, 365, height-90, 100, 50, "I", 130, 0, 60);
-                    
+                    b4 = new Button(this, 365, height-90, 100, 50, "I", 130, 0, 60);                    
                 }
                 click.play();
                 click.rewind();
