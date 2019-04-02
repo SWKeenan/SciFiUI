@@ -29,7 +29,7 @@ public class UI extends PApplet
     boolean welcomeOn = true;
     Cat cat1;
 
-    boolean[] keys = new boolean[1024];
+    boolean[] keys = new boolean[70000];
 
     public void keyPressed()
     {

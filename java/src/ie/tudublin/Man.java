@@ -93,9 +93,6 @@ public class Man {
             ui.image(movement[0][currentFrame],x,y);
             currentFrame++;
         }
-        else{
-            
-        }
     }
 
     public void keyPressed(){
