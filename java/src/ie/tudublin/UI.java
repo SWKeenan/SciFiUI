@@ -27,6 +27,7 @@ public class UI extends PApplet
     Man man1;
     Fly[] flies = new Fly[100];
     boolean welcomeOn = true;
+    Cat cat1;
 
     boolean[] keys = new boolean[1024];
 
@@ -123,6 +124,7 @@ public class UI extends PApplet
         for(int i=0;i<flies.length;i++){
             flies[i] = new Fly(this,random(250,600),random(150,200),random(100));
         }
+        cat1 = new Cat(this);
     }
 
     public void draw()
@@ -249,6 +251,9 @@ public class UI extends PApplet
                 flies[i].update();
                 flies[i].draw();
             }     
+        }
+        if(buttonPressed[8]==true){
+            cat1.draw();
         }
        
         if(mousePressed){

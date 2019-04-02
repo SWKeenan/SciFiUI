@@ -94,7 +94,7 @@ public class Man {
             currentFrame++;
         }
         else{
-            ui.image(movement[0][1],x,y); 
+            
         }
     }
 
