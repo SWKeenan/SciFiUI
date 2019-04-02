@@ -6,7 +6,7 @@ import ddf.minim.*;
 public class UI extends PApplet
 {
     Minim minim;
-    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse, noise, scan, space, jolly, fly;
+    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse, noise, scan, space, clank, jolly, fly;
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc,mc2,mc3,mc4;
@@ -52,6 +52,7 @@ public class UI extends PApplet
     {
         minim = new Minim(this);
         startup = minim.loadFile("startup.wav");
+        clank = minim.loadFile("clank.mp3");
         click = minim.loadFile("click.wav");
         ping = minim.loadFile("ping.wav");
         love = minim.loadFile("love.wav");
@@ -463,9 +464,16 @@ public class UI extends PApplet
                 text("YOU PRESSED LOVE", width/2, 60);
             }
 
-            else if(mouseX>0 && mouseX<width && mouseY>0 && mouseY < height){
+            else if(mouseX>100 && mouseX<700 && mouseY>50 && mouseY<300){
                 ping.play();
                 ping.rewind();
+                fill(255);
+                ellipse(mouseX,mouseY,10,10);
+            }
+
+            else if(mouseX>0 && mouseX<width && mouseY>0 && mouseY < height){
+                clank.play();
+                clank.rewind();
                 fill(255);
                 ellipse(mouseX,mouseY,10,10);
             }
