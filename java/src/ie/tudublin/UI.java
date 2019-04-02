@@ -6,7 +6,7 @@ import ddf.minim.*;
 public class UI extends PApplet
 {
     Minim minim;
-    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse, noise, scan, space, jolly;
+    AudioPlayer click, ping, love, startup, bubbling, bouncy, morse, noise, scan, space, jolly, fly;
     Computer keyboard, computer;
     Button b,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     MovingCircle mc,mc2,mc3,mc4;
@@ -25,7 +25,7 @@ public class UI extends PApplet
     Triangle[] triangles = new Triangle[7];
     int fade = 153;
     Man man1;
-    Shape shape,shape2,shape3;
+    Fly[] flies = new Fly[100];
     boolean welcomeOn = true;
 
     boolean[] keys = new boolean[1024];
@@ -55,6 +55,7 @@ public class UI extends PApplet
         click = minim.loadFile("click.wav");
         ping = minim.loadFile("ping.wav");
         love = minim.loadFile("love.wav");
+        fly = minim.loadFile("fly.wav");
         scan = minim.loadFile("scan.wav");
         noise = minim.loadFile("noise.wav");
         bubbling = minim.loadFile("bubbling.wav");
@@ -118,9 +119,9 @@ public class UI extends PApplet
             triangles[i] = new Triangle(this,random(200,400),295,400,random(95,295),random(400,600),295,5);
         }
         man1 = new Man(this,width/2,150,4);
-        shape = new Shape(this,350,150,1);
-        shape2 = new Shape(this,400,110,30);
-        shape3 = new Shape(this,280,130,80);
+        for(int i=0;i<flies.length;i++){
+            flies[i] = new Fly(this,random(250,600),random(150,200),random(100));
+        }
     }
 
     public void draw()
@@ -243,12 +244,10 @@ public class UI extends PApplet
             text("Press W/A/S/D to move",170,55);
         }
         if(buttonPressed[7]==true){
-            shape.update();
-            shape.draw();  
-            shape2.update();
-            shape2.draw();   
-            shape3.update();
-            shape3.draw();      
+            for(int i=0;i<flies.length;i++){
+                flies[i].update();
+                flies[i].draw();
+            }     
         }
        
         if(mousePressed){
@@ -404,12 +403,14 @@ public class UI extends PApplet
                         bouncy.pause();
                         bubbling.pause();
                         love.pause();
+                        fly.pause();
                         buttonPressed[i] = false;
                         b3 = new Button(this, 260, height-90, 100, 50, "FLY", 255, 0, 255);
                         computer = new Computer(this, 100, 50, 600, 250, 0);
                         welcomeOn = false;
                     }
                 } else if(buttonPressed[7]==false){
+                    fly.loop();
                     buttonPressed[7] = true;
                     b3 = new Button(this, 260, height-90, 100, 50, "FLY", 130, 0, 130);
                     computer = new Computer(this, 100, 50, 600, 250, 255);
@@ -433,6 +434,7 @@ public class UI extends PApplet
                 } else if(buttonPressed[8]==false){
                     buttonPressed[8] = true;
                     b4 = new Button(this, 365, height-90, 100, 50, "I", 130, 0, 60);
+                    
                 }
                 click.play();
                 click.rewind();

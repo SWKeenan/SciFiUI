@@ -2,14 +2,14 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Shape
+public class Fly
 {
     UI ui;
     float movement;
-    float position1 = 350;
-    float position2 = 150;
+    float position1;
+    float position2;
 
-    public Shape(UI ui, float position1, float position2, float movement)
+    public Fly(UI ui, float position1, float position2, float movement)
     {
         this.ui = ui;
         this.position1 = position1;
