@@ -21,8 +21,12 @@ public class Cat {
     public void draw()
     {
         ui.translate(350,150);
-
-        if(ui.mouseY > 200){
+        if(ui.mouseY <= 200){
+            ui.translate(-275,-150);
+            ui.scale((float)0.8);
+            ui.image(cat1,0,0);
+        }
+        else if(ui.mouseY > 200){
             ui.scale((float)0.10);
             ui.image(cat1,0,0);
         }
