@@ -77,4 +77,4 @@ This is an image using an absolute URL:
 
 This is a youtube video:
 
-(https://youtu.be/02jJRolMXUo)
+https://youtu.be/02jJRolMXUo
