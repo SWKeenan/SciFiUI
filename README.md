@@ -36,35 +36,29 @@ This is a numbered list
 
 This is a [hyperlink](http://bryanduggan.org)
 
-# Headings
-## Headings
-#### Headings
-##### Headings
+# Example of Code
 
-This is code:
+This is a segment of code which was used to add a noise and response effect when the user didn't press a button but instead tapped on the monitor or the computer terminal:
 
 ```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
 
-So is this without specifying the language:
+            else if(mouseX>100 && mouseX<700 && mouseY>50 && mouseY<300){
+                ping.play();
+                ping.rewind();
+                if(tapOn){
+                    fill(255);
+                    ellipse(mouseX,mouseY,10,10);
+                }
+            }
 
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
+            else if(mouseX>0 && mouseX<width && mouseY>0 && mouseY < height){
+                clank.play();
+                clank.rewind();
+                if(tapOn){
+                    fill(255);
+                    ellipse(mouseX,mouseY,10,10);
+                }
+            }
 ```
 
 This is an image using a relative URL:
