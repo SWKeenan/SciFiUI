@@ -77,4 +77,4 @@ This is an image using an absolute URL:
 
 This is a youtube video:
 
-https://youtu.be/02jJRolMXUo
+[![youtubeScreenshot](https://user-images.githubusercontent.com/38283909/55491509-81a37100-562d-11e9-82f2-2c4fac6faa18.PNG)](https://youtu.be/02jJRolMXUo)
