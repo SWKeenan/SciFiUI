@@ -18,7 +18,7 @@ The buttons and computer terminal were created as objects through the Processing
 
 # What I am most proud of in the assignment
 
-I am proud of blah blah.
+I am proud of taking the simple idea of a computer terminal and making it light-hearted, colorful and fun. I am also pround of overcoming the challenges and issues faced during its implementation and I also enjoyed adding in the little elements such as the sounds and the appearance of the buttons when they are clicked on and off.
 
 # Issues Faced
 
