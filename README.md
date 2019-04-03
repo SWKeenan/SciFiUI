@@ -20,21 +20,25 @@ How it works goes here.
 
 I am proud of blah blah.
 
-# Markdown Tutorial
+# Issues Faced
 
-This is *emphasis*
+Some of the *issues faced* included:
 
-This is a bulleted list
+- Program crashing when most keys pressed
+- Conflict issues with button pressed
+- Button turning on and off multiple times
+- Sound issues overlapping on different buttons
+- Multiple buttons playing at once
+- Getting the character sprite to move
 
-- Item
-- Item
+Ways in which they were overcome:
 
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
+1. Increasing the keys pressed array size
+2. Making a boolean of buttonsPressed to make one true and the others false
+3. When mouse is pressed making it false so that it only activates once
+4. Using the .pause() from the minim library
+5. Setting other buttons to false
+6. Using iteration through spriteSheet movement
 
 # Example of Code
 
