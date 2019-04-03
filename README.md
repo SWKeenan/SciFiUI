@@ -74,7 +74,7 @@ This is an image using a relative URL:
 
 This is an image using an absolute URL:
 
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
+![A different image](<a href="https://ibb.co/zZ1x9rb"><img src="https://i.ibb.co/BBm3Wtj/screenshot2.png" alt="screenshot2" border="0"></a>)
 
 This is a youtube video:
 
