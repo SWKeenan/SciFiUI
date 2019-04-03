@@ -78,13 +78,3 @@ This is an image using an absolute URL:
 This is a youtube video:
 
 https://youtu.be/02jJRolMXUo
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-
