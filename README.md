@@ -69,12 +69,11 @@ public void render()
 
 This is an image using a relative URL:
 
-(![screenshot1](https://user-images.githubusercontent.com/38283909/55491106-d09cd680-562c-11e9-876e-972b3801099f.PNG)
-)
+https://user-images.githubusercontent.com/38283909/55491106-d09cd680-562c-11e9-876e-972b3801099f.PNG
 
 This is an image using an absolute URL:
 
-![A different image](<a href="https://ibb.co/zZ1x9rb"><img src="https://i.ibb.co/BBm3Wtj/screenshot2.png" alt="screenshot2" border="0"></a>)
+<a href="https://ibb.co/zZ1x9rb"><img src="https://i.ibb.co/BBm3Wtj/screenshot2.png" alt="screenshot2" border="0"></a>
 
 This is a youtube video:
 
