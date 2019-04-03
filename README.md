@@ -14,7 +14,7 @@ When the program turns on the user is greeting to a welcome message. The design 
 
 # How it works
 
-How it works goes here.
+The buttons and computer terminal were created as objects through the Processing draw library. Each button was given a boolean condition so that when one is selected the others cannot be activated and any sound is reset and/or paused. When a button is clicked it activates any function that was made from it such as .draw(), .update(), etc. 
 
 # What I am most proud of in the assignment
 
@@ -31,7 +31,7 @@ Some of the *issues faced* included:
 - Multiple buttons playing at once
 - Getting the character sprite to move
 
-Ways in which they were overcome:
+Ways in which they were *overcome*:
 
 1. Increasing the keys pressed array size
 2. Making a boolean of buttonsPressed to make one true and the others false
