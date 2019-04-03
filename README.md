@@ -6,7 +6,7 @@ Student Number: C17702215
 
 # Description of the assignment
 
-The description will go here.
+The purpose of this assignment was to develop a better understanding of the Java environment as well as using the Processing library in order to create a user interface with a science fiction theme. This resulting creation can either be something which already exists in the form of a movie or computer game or it can be completely self-created. It needs to have animation and interactivity as well as show and utilize all the aspects which have been learned during the OOP module. 
 
 # Instructions
 
