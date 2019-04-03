@@ -1,7 +1,5 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
-
 public class Triangle
 {
     private float x1;
@@ -11,7 +9,6 @@ public class Triangle
     private float z1;
     private float z2;
     private float speed;
-    private int TriCol1,TriCol2,TriCol3;
     UI ui;
 
     public Triangle(UI ui, float x1, float x2, float y1, float y2, float z1, float z2, float speed)

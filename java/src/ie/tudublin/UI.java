@@ -28,6 +28,7 @@ public class UI extends PApplet
     Fly[] flies = new Fly[100];
     boolean welcomeOn = true;
     Cat cat1;
+    boolean tapOn = true;
 
     boolean[] keys = new boolean[70000];
 
@@ -284,6 +285,19 @@ public class UI extends PApplet
                         b = new Button(this,  360, height-200, 100, 50, "BALLS", 255, 255, 0);
                     }
                 } else if(buttonPressed[0]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     bouncy.loop();
                     buttonPressed[0] = true;
                     b = new Button(this,  360, height-200, 100, 50, "BALLS", 130, 130, 0);
@@ -312,6 +326,19 @@ public class UI extends PApplet
                     }
                     
                 } else if(buttonPressed[1]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     scan.loop();
                     buttonPressed[1] = true;
                     b8 = new Button(this, 255, height-200, 100, 50, "DATE", 130, 64, 0);                    
@@ -339,6 +366,19 @@ public class UI extends PApplet
                         b2 = new Button(this, 465, height-200, 100,50, "BARS", 128, 255, 0);
                     }
                 } else if(buttonPressed[2]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     morse.loop();
                     buttonPressed[2] = true;
                     b2 = new Button(this, 465, height-200, 100,50, "BARS", 64, 130, 0);
@@ -366,6 +406,19 @@ public class UI extends PApplet
                         b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 255, 128);
                     }
                 } else if(buttonPressed[3]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     space.loop();
                     buttonPressed[3] = true;
                     b9 = new Button(this, 205, height-145, 100, 50, "STARS", 0, 130, 64);
@@ -393,6 +446,19 @@ public class UI extends PApplet
                         b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 255, 255);
                     }
                 } else if(buttonPressed[4]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     noise.loop();
                     buttonPressed[4] = true;
                     b10 = new Button(this, 310, height-145, 100, 50, "WORDS", 0, 130, 130);
@@ -420,6 +486,19 @@ public class UI extends PApplet
                         b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 128, 255);
                     }
                 } else if(buttonPressed[5]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     bubbling.loop();
                     buttonPressed[5] = true;
                     b6 = new Button(this, 415, height-145, 100, 50, "TRIANGLES", 0, 64, 130);
@@ -447,6 +526,19 @@ public class UI extends PApplet
                         b7 = new Button(this, 520, height-145, 100, 50, "MAN", 128, 0, 255);
                     }
                 } else if(buttonPressed[6]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     jolly.loop();
                     buttonPressed[6] = true;
                     b7 = new Button(this, 520, height-145, 100, 50, "MAN", 64, 0, 130);
@@ -476,6 +568,19 @@ public class UI extends PApplet
                         welcomeOn = false;
                     }
                 } else if(buttonPressed[7]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     fly.loop();
                     buttonPressed[7] = true;
                     b3 = new Button(this, 260, height-90, 100, 50, "FLY", 130, 0, 130);
@@ -505,6 +610,19 @@ public class UI extends PApplet
                         b4 = new Button(this, 365, height-90, 100, 50, "TIGER", 255, 0, 127);
                     }
                 } else if(buttonPressed[8]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
                     buttonPressed[8] = true;
                     b4 = new Button(this, 365, height-90, 100, 50, "TIGER", 130, 0, 60);                    
                 }
@@ -529,8 +647,23 @@ public class UI extends PApplet
                         bouncy.pause();
                         buttonPressed[i] = false;
                         b5 = new Button(this, 470, height-90, 100, 50, "LOVE", 255, 0, 0);
+                        tapOn = true;
                     }
                 } else if(buttonPressed[9]==false){
+                    for(int i=0;i<10;i++){
+                        buttonPressed[i] = false;
+                        meow.pause();
+                        love.pause();
+                        fly.pause();
+                        scan.pause();
+                        noise.pause();
+                        bubbling.pause();
+                        space.pause();
+                        jolly.pause();
+                        morse.pause();
+                        bouncy.pause();
+                    }
+                    tapOn = false;
                     love.play();
                     love.rewind();
                     buttonPressed[9] = true;
@@ -545,15 +678,19 @@ public class UI extends PApplet
             else if(mouseX>100 && mouseX<700 && mouseY>50 && mouseY<300){
                 ping.play();
                 ping.rewind();
-                fill(255);
-                ellipse(mouseX,mouseY,10,10);
+                if(tapOn){
+                    fill(255);
+                    ellipse(mouseX,mouseY,10,10);
+                }
             }
 
             else if(mouseX>0 && mouseX<width && mouseY>0 && mouseY < height){
                 clank.play();
                 clank.rewind();
-                fill(255);
-                ellipse(mouseX,mouseY,10,10);
+                if(tapOn){
+                    fill(255);
+                    ellipse(mouseX,mouseY,10,10);
+                }
             }
         }
     }
