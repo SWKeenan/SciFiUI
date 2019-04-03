@@ -77,4 +77,4 @@ This is an image using an absolute URL:
 
 This is a youtube video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/02jJRolMXUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![YouTube](https://youtu.be/02jJRolMXUo)
