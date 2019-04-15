@@ -10,7 +10,7 @@ The purpose of this assignment was to develop a better understanding of the Java
 
 # Instructions
 
-When the program turns on the user is greeting to a welcome message. The design principle of this interface was an oldschool computer terminal that would activite different programs when the user pushes one of the ten buttons available. The user is also prompted to follow the instructions that display on some of these programs, for example moving the man with W/A/S/D and touching the tiger with the mouse cursor. 
+When the program turns on the user is greeted to a welcome message. The design principle of this interface was an oldschool computer terminal that would activite different programs when the user pushes one of the ten buttons available. The user is also prompted to follow the instructions that display on some of these programs, for example moving the man with W/A/S/D and touching the tiger with the mouse cursor. 
 
 # How it works
 
